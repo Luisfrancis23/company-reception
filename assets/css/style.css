@@ -1,0 +1,228 @@
+:root {
+    --dark-blue: #0d2b4e;
+    --dark-blue-light: #14396b;
+    --light-grey: #f4f6f9;
+    --border-grey: #e1e5eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-grey);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.top-navbar {
+    background-color: var(--dark-blue);
+    padding: 12px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+}
+
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 56px;
+}
+
+.sidebar {
+    width: 230px;
+    background-color: #ffffff;
+    border-right: 1px solid var(--border-grey);
+    padding-top: 0;
+    flex-shrink: 0;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    bottom: 0;
+    z-index: 1030;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    padding: 18px 20px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    border-bottom: 1px solid var(--border-grey);
+    font-size: 1.1rem;
+}
+
+.sidebar-brand i {
+    margin-right: 8px;
+}
+
+.sidebar .nav-link {
+    color: #33475b;
+    padding: 12px 20px;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+}
+
+.sidebar .nav-link i {
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar .nav-link:hover {
+    background-color: var(--light-grey);
+    color: var(--dark-blue);
+}
+
+.sidebar .nav-link.active {
+    background-color: var(--light-grey);
+    color: var(--dark-blue);
+    border-left: 4px solid var(--dark-blue);
+    font-weight: 700;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 25px;
+    margin-left: 230px;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid var(--border-grey);
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card p {
+    color: #6b7a8f;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.stat-card h3 {
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 0;
+    font-size: 1.75rem;
+}
+
+.stat-card .stat-icon {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 2.5rem;
+    color: rgba(13, 43, 78, 0.1);
+}
+
+.card {
+    border-radius: 14px;
+    border: 1px solid var(--border-grey);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-grey);
+    border-radius: 14px 14px 0 0 !important;
+    font-weight: 600;
+    color: var(--dark-blue);
+    padding: 14px 20px;
+}
+
+.btn-primary,
+.btn-dark-blue {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.btn-primary:hover,
+.btn-dark-blue:hover {
+    background-color: var(--dark-blue-light);
+    border-color: var(--dark-blue-light);
+}
+
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-blue-light) 100%);
+    padding: 20px;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.login-card .login-icon {
+    font-size: 3rem;
+    color: var(--dark-blue);
+}
+
+#signature-pad {
+    border: 2px dashed var(--border-grey);
+    border-radius: 10px;
+    background: #fff;
+    touch-action: none;
+    cursor: crosshair;
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+}
+
+.signature-preview {
+    max-width: 250px;
+    max-height: 80px;
+    border: 1px solid var(--border-grey);
+    border-radius: 8px;
+    background: #fff;
+    padding: 6px;
+}
+
+.table th {
+    background-color: var(--light-grey);
+    color: var(--dark-blue);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--border-grey) !important;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.pagination .page-link {
+    color: var(--dark-blue);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        left: -230px;
+        transition: left 0.25s ease;
+    }
+    .sidebar.show {
+        left: 0;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
